@@ -1,0 +1,83 @@
+
+chatbot = {
+    "hello": {
+        "questions": ["hello", "hi", "hii", "hey", "hello bro"],
+        "answer": "Hello! How can I help you?"
+    },
+
+    "name": {
+        "questions": ["name", "your name", "what is your name",
+                      "tell me your name", "who are you"],
+        "answer": "My name is David."
+    },
+
+    "creator": {
+        "questions": ["who made you", "who created you",
+                      "who is your creator", "who built you"],
+        "answer": "I was created by Aman."
+    },
+
+    "python": {
+        "questions": ["what is python", "define python",
+                      "python meaning", "tell me about python"],
+        "answer": "Python is a popular programming language."
+    },
+
+    "age": {
+        "questions": ["your age", "how old are you",
+                      "what is your age"],
+        "answer": "I don't have an age. I am an AI chatbot."
+    },
+
+    "feeling": {
+        "questions": ["how are you", "are you fine",
+                      "how are you doing"],
+        "answer": "I am fine! What about you?"
+    },
+
+    "college": {
+        "questions": ["college", "which college",
+                      "where do you study"],
+        "answer": "I am a virtual AI assistant."
+    },
+
+    "help": {
+        "questions": ["help", "can you help me",
+                      "what can you do"],
+        "answer": "Yes! I can answer your basic questions."
+    },
+
+    "thanks": {
+        "questions": ["thanks", "thank you",
+                      "thank you so much"],
+        "answer": "You're welcome!"
+    },
+
+    "bye": {
+        "questions": ["bye", "goodbye", "see you",
+                      "see you later"],
+        "answer": "Goodbye! Have a nice day."
+    }
+}
+
+
+while True:
+
+    choice = input("You: ")
+    choice = " ".join(choice.lower().split())
+
+    if choice == "exit":
+        print("Bot: Goodbye!")
+        break
+
+    found = False
+
+    for key, data in chatbot.items():
+
+        if choice in data["questions"]:
+            print("Bot:", data["answer"])
+            found = True
+            break
+
+    if not found:
+        print("Bot: Sorry, I don't understand.")
